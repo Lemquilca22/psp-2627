@@ -5,11 +5,11 @@ import java.util.List;
 
 public class PasoReceta {
     private String DescripcionAccion;
-    private String tipoRecipiente;
+    private Recipiente tipoRecipiente;
     private List<Ingrediente> listIngredientePasoReceta;
     private int duracionSegundos;
 
-    public PasoReceta(String descripcionAccion, String tipoRecipiente, int duracionSegundos) {
+    public PasoReceta(String descripcionAccion, Recipiente tipoRecipiente, int duracionSegundos) {
         DescripcionAccion = descripcionAccion;
         this.tipoRecipiente = tipoRecipiente;
         this.listIngredientePasoReceta = new ArrayList<>();
@@ -24,20 +24,20 @@ public class PasoReceta {
         DescripcionAccion = descripcionAccion;
     }
 
-    public String getTipoRecipiente() {
+    public Recipiente getTipoRecipiente() {
         return tipoRecipiente;
     }
 
-    public void setTipoRecipiente(String tipoRecipiente) {
+    public void setTipoRecipiente(Recipiente tipoRecipiente) {
         this.tipoRecipiente = tipoRecipiente;
     }
 
-    public List<Ingrediente> getIngredientes() {
+    public List<Ingrediente> getListIngredientePasoReceta() {
         return listIngredientePasoReceta;
     }
 
-    public void setIngredientes(List<Ingrediente> ingredientes) {
-        this.listIngredientePasoReceta = ingredientes;
+    public void setListIngredientePasoReceta(List<Ingrediente> listIngredientePasoReceta) {
+        this.listIngredientePasoReceta = listIngredientePasoReceta;
     }
 
     public int getDuracionSegundos() {
@@ -47,6 +47,7 @@ public class PasoReceta {
     public void setDuracionSegundos(int duracionSegundos) {
         this.duracionSegundos = duracionSegundos;
     }
+
     public void agregarIngrediente(Ingrediente ingrediente) {
         if (ingrediente != null) {
             this.listIngredientePasoReceta.add(ingrediente);

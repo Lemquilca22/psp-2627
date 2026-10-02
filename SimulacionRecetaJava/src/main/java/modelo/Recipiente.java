@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Recipiente {
-    private String recipiente;
+    private String nombreRecipiente;
     private String estado;
     private List<Ingrediente> listIngrediente;
 
     public Recipiente(String recipiente, String estado) {
-        this.recipiente = recipiente;
+        this.nombreRecipiente = recipiente;
         this.estado = estado;
         this.listIngrediente = new ArrayList<>();
     }
 
-    public String getRecipiente() {
-        return recipiente;
+    public String getNombrerecipiente() {
+        return nombreRecipiente;
     }
 
-    public void setRecipiente(String recipiente) {
-        this.recipiente = recipiente;
+    public void setNombrerecipiente(String nombrerecipiente) {
+        this.nombreRecipiente = nombrerecipiente;
     }
 
     public String getEstado() {
