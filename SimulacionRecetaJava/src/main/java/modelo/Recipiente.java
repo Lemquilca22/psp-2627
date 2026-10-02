@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Recipiente {
     private String nombreRecipiente;
-    private String estado;
+    private EstadoRecipiente estado;
     private List<Ingrediente> listIngrediente;
 
-    public Recipiente(String recipiente, String estado) {
-        this.nombreRecipiente = recipiente;
-        this.estado = estado;
+    public Recipiente(String nombre) {
+        this.nombreRecipiente = nombre;
+        this.estado = EstadoRecipiente.VACIO;
         this.listIngrediente = new ArrayList<>();
     }
 
@@ -22,11 +22,11 @@ public class Recipiente {
         this.nombreRecipiente = nombrerecipiente;
     }
 
-    public String getEstado() {
+    public EstadoRecipiente getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoRecipiente estado) {
         this.estado = estado;
     }
 

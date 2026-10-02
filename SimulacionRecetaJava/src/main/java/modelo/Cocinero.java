@@ -20,13 +20,14 @@ public class Cocinero {
 
     public void ejecutarPasoReceta(PasoReceta paso){
         Recipiente recipiente = paso.getTipoRecipiente();
-        recipiente.setEstado("EN USO");
+        recipiente.setEstado(EstadoRecipiente.EN_USO);//Cambiarlo por un enumerado
         List<Ingrediente> ingredientesDelPaso = paso.getListIngredientePasoReceta();
         recipiente.agregarIngredientes(ingredientesDelPaso);
 
         long tiempoInicio = System.currentTimeMillis();
         LocalTime horaInicio = LocalTime.now();
 
+        System.out.println("==================================================");
         System.out.println("Hora inicio: " + horaInicio);
         System.out.println("Cocinero " + this.nombre + " -> " + paso.getDescripcionAccion());
         System.out.println("Recipiente utilizado: " + recipiente.getNombrerecipiente() + " [Estado: " + recipiente.getEstado() + "]");
@@ -54,7 +55,7 @@ public class Cocinero {
             System.out.println("El paso fue interrumpido.");
         }
 
-        recipiente.setEstado("TERMINADO");
+        recipiente.setEstado(EstadoRecipiente.FINALIZADO);
         long tiempoFin = System.currentTimeMillis();
         LocalTime horaFin = LocalTime.now();
 
@@ -63,4 +64,3 @@ public class Cocinero {
     }
     }
 
-}
