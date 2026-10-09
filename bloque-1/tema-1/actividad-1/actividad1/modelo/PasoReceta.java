@@ -2,6 +2,7 @@ package actividad1.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PasoReceta {
     private String DescripcionAccion;
@@ -9,11 +10,12 @@ public class PasoReceta {
     private List<Ingrediente> listIngredientePasoReceta;
     private int duracionSegundos;
 
-    public PasoReceta(String descripcionAccion, Recipiente tipoRecipiente, int duracionSegundos) {
+    public PasoReceta(String descripcionAccion, Recipiente tipoRecipiente, Random random, int minSeg, int maxSeg) {
         DescripcionAccion = descripcionAccion;
         this.tipoRecipiente = tipoRecipiente;
+        this.duracionSegundos = minSeg + random.nextInt(maxSeg - minSeg + 1);
         this.listIngredientePasoReceta = new ArrayList<>();
-        this.duracionSegundos = duracionSegundos;
+
     }
 
     public String getDescripcionAccion() {

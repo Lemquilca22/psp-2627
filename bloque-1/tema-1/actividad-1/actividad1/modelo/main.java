@@ -1,7 +1,11 @@
 package actividad1.modelo;
 
+import java.util.Random;
+
 public class main {
     public static void main(String[] args) {
+        Random generadorAleatorios = new Random();
+
         Cocinero cocinero = new Cocinero("Lem");
 
         //Recipientes
@@ -23,36 +27,36 @@ public class main {
         Receta boloñesa = new Receta("Espaguetis a la Boloñesa");
 
         //Configurar y añadir cada PasoReceta en orden estricto
-        PasoReceta paso1 = new PasoReceta("Poner agua a hervir", olla, 4);
+        PasoReceta paso1 = new PasoReceta("Poner agua a hervir", olla, generadorAleatorios,3,10);
         paso1.agregarIngrediente(agua);
         paso1.agregarIngrediente(sal);
         boloñesa.agregarPaso(paso1);
 
-        PasoReceta paso2 = new PasoReceta("Cocer los espaguetis", olla, 6);
+        PasoReceta paso2 = new PasoReceta("Cocer los espaguetis", olla, generadorAleatorios,3,10);
         paso2.agregarIngrediente(espaguetis);
         boloñesa.agregarPaso(paso2);
 
-        PasoReceta paso3 = new PasoReceta("Sofreír cebolla y ajo", sarten, 3);
+        PasoReceta paso3 = new PasoReceta("Sofreír cebolla y ajo", sarten, generadorAleatorios,3,10);
         paso3.agregarIngrediente(aceite);
         paso3.agregarIngrediente(cebolla);
         paso3.agregarIngrediente(ajo);
         boloñesa.agregarPaso(paso3);
 
-        PasoReceta paso4 = new PasoReceta("Añadir la carne picada y dorar", sarten, 4);
+        PasoReceta paso4 = new PasoReceta("Añadir la carne picada y dorar", sarten, generadorAleatorios,3,10);
         paso4.agregarIngrediente(carne);
         boloñesa.agregarPaso(paso4);
 
-        PasoReceta paso5 = new PasoReceta("Añadir el tomate y reducir salsa", sarten, 5);
+        PasoReceta paso5 = new PasoReceta("Añadir el tomate y reducir salsa", sarten, generadorAleatorios,3,10);
         paso5.agregarIngrediente(tomate);
         boloñesa.agregarPaso(paso5);
 
-        PasoReceta paso6 = new PasoReceta("Escurrir la pasta", olla, 2);
+        PasoReceta paso6 = new PasoReceta("Escurrir la pasta", olla, generadorAleatorios,3,10);
         boloñesa.agregarPaso(paso6);
 
-        PasoReceta paso7 = new PasoReceta("Mezclar pasta con la salsa", sarten, 3);
+        PasoReceta paso7 = new PasoReceta("Mezclar pasta con la salsa", sarten, generadorAleatorios,3,10);
         boloñesa.agregarPaso(paso7);
 
-        PasoReceta paso8 = new PasoReceta("Emplatar la pasta", plato, 2);
+        PasoReceta paso8 = new PasoReceta("Emplatar la pasta", plato, generadorAleatorios,3,10);
         boloñesa.agregarPaso(paso8);
 
         boloñesa.ejecutarReceta(cocinero);
