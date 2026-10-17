@@ -1,8 +1,6 @@
 package actividad3.ConSincronizacion;
 
-import actividad3.SinSincronizar.Incrementador;
-
-public class Main {
+public class Main2 {
     private static final int VISITANTES_POR_HILO = 1000;
 
     public static void main(String[] args) throws InterruptedException {
@@ -27,6 +25,6 @@ public class Main {
         v4.join();
 
         System.out.println("Resultado real: " + aforoSinc.getTotal());
-        System.out.println("(Si es menor que el esperado: se han pisado lecturas/escrituras)");
+        System.out.println("(Debe coincidir siempre con el esperado)");
     }
 }
