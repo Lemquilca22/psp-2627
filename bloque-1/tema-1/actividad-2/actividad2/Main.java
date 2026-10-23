@@ -1,25 +1,21 @@
 package actividad2;
 
-import e09.Alarma;
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Thread impresora = new Thread(new Impresora("impresora", 500), "impresora");
-        Thread correo = new Thread(new Correo("correo", 1000), "correo");
-        Thread backup = new Thread(new Backup("backup", 1500), "backup");
+        Thread impresoraThread = new Thread(new Impresora(5), "impresora");
+        Thread correoThread = new Thread(new Correo(10), "correo");
+        Thread backupThread = new Thread(new Backup(2), "backup");
 
-        System.out.println("Iniciar y Lanzar proceso");
-        System.out.println("---");
-        impresora.start();
-        correo.start();
-        backup.start();
+        System.out.println("Iniciando ordenador y lanzando procesos");
 
-//        System.out.println("[main] mientras ellos duermen, yo sigo (no estoy bloqueado)");
+        impresoraThread.start();
+        correoThread.start();
+        backupThread.start();
 
-        impresora.join();
-        correo.join();
-        backup.join();
-        System.out.println("---");
-        System.out.println("main: fin");
+        impresoraThread.join();
+        correoThread.join();
+        backupThread.join();
+
+        System.out.println("Apagando ordenador.");
     }
 }
