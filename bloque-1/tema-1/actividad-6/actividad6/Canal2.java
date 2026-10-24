@@ -17,14 +17,15 @@ import java.nio.file.StandardOpenOption;
  * Main y Trabajador no parsean el String: llaman a enviar y recibir.
  * En un sistema de verdad esto sería Redis, una cola, SQL o una llamada a otro servicio.
  */
-public final class Canal {
+public final class Canal2 {
 
+    public static final int TAREAS = 8;
     public static final long PAUSA_MS = 50;
     /** Los dos esperan esto antes de escribir su respuesta, para poder leer el intercambio. */
     public static final long ANTES_DE_CONTESTAR_MS = 5_000;
     public static final Path ARCHIVO = localizar();
 
-    private Canal() {
+    private Canal2() {
     }
 
     public static void enviar(Mensaje mensaje) throws IOException {
