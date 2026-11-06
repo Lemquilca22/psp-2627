@@ -29,7 +29,7 @@ La estructura es la siguiente:
       # también puedes encontrarlos en el aula virtual
     /ejemplos/
       # código de clase (referencia, no evaluable)
-    /ejercicios/
+    /examen-practicas/
       # práctica de examen (no evaluable)
     /actividad-1/
       README.md # enunciado actividad 1
